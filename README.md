@@ -1,8 +1,28 @@
-# AcquireSDK
+# AcquireIO Android SDK
 
-This is an official sdk app from Acquire.IO  
-By this source you will get to know about our sdk methods and its usage.
-Also maximum customization covered in this app to show our sdk capabilities.
-From process to initialise sdk to the co-browsing customization all methods included.
-Start chat from start button.
-For Direct Audio/Video call see Help page on application.
+[![N|Solid](https://github.com/acquireio/acquireio-android/blob/master/github_banner.png)](httpshttps://play.google.com/store/apps/details?id=com.acquire.sdk.app)
+
+This is an official sdk app from Acquire.IO.
+Acquire is a customer communication platform
+We’re the first multi-channel messaging platform for businesses. We help users bridge gaps between customers and sales and support teams to empower all involved.
+
+# New Features!
+
+  - Live Chat bot support
+  - Cobrowsing with click and drag support
+
+You can also:
+  - Upload files to our server directly
+  - Chat with seamless audio/video calls
+  
+  
+You will need acquire accout to start our sdk.
+
+If don't have it already then you can easily make one from [here](https://app.acquire.io/signup "here").
+
+By this source, you will get to know about our sdk methods and its usage.
+
+Also maximum customization covered in this app to show our **android sdk** capabilities.
+
+To know more about our sdk features please visit our website.
+[Acquire - Android Docs](https://developer.acquire.io/android/getting-started "Acquire - Android Docs")
