@@ -2,9 +2,17 @@
 
 [![N|Solid](https://github.com/acquireio/acquireio-android/blob/master/github_banner.png)](httpshttps://play.google.com/store/apps/details?id=com.acquire.sdk.app)
 
-This is an official sdk app from Acquire.IO.
-Acquire is a customer communication platform
-We’re the first multi-channel messaging platform for businesses. We help users bridge gaps between customers and sales and support teams to empower all involved.
+------------
+
+Acquire is a customer communication platform.:blue_book:      
+We’re the first multi-channel messaging platform for businesses.     
+We help users bridge gaps between customers and sales and support teams to empower all involved.
+
+This is our official sdk app.
+
+------------
+
+
 
 # New Features!
 
@@ -26,3 +34,6 @@ Also maximum customization covered in this app to show our **android sdk** capab
 
 To know more about our sdk features please visit our website.
 [Acquire - Android Docs](https://developer.acquire.io/android/getting-started "Acquire - Android Docs")
+
+If you have any question or suggestion, we love to hear from you.
+[CONTACT US](https://acquire.io/ "CONTACT US")
