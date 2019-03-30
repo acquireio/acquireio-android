@@ -196,4 +196,14 @@ public class HelpActivity extends BaseActivity implements OnSessionEvents {
     public void noAgentAvailable() {
 
     }
+
+    @Override
+    public void onWaitDialogAppear() {
+
+    }
+
+    @Override
+    public void onWaitDialogDisappear() {
+
+    }
 }

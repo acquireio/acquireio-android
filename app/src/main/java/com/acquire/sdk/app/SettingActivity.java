@@ -21,7 +21,6 @@ import com.acquire.sdk.app.util.SelectedTab;
 import com.acquireio.AcquireApp;
 import com.acquireio.builder.CoBrowse;
 import com.acquireio.builder.SupportFAB;
-import com.acquireio.sdk.model.Visitor;
 import com.skydoves.colorpickerview.AlphaTileView;
 import com.skydoves.colorpickerview.ColorEnvelope;
 import com.skydoves.colorpickerview.ColorPickerDialog;
@@ -29,6 +28,7 @@ import com.skydoves.colorpickerview.listeners.ColorEnvelopeListener;
 
 import static com.acquireio.builder.SupportFAB.FAB_POSITION.BOTTOM_LEFT;
 import static com.acquireio.builder.SupportFAB.FAB_POSITION.BOTTOM_RIGHT;
+
 
 public class SettingActivity extends BaseActivity {
 
@@ -96,7 +96,7 @@ public class SettingActivity extends BaseActivity {
         }
         alphaTileView.setPaintColor(Color.BLACK);
         alphaTileView1.setPaintColor(Color.BLACK);
-        txtCobId.setText(Visitor.cob_code);
+//        txtCobId.setText(Visitor.cob_code);
         setDataFromBuilder();
     }
 
@@ -221,7 +221,7 @@ public class SettingActivity extends BaseActivity {
         // Directly set the values to the supportFAB variable
         SupportFAB.SupportFABBuilder supportFABBuilder = new SupportFAB.SupportFABBuilder();
         supportFABBuilder.setFabSize(fabSize)
-                .setFabIconPosition(fabPOs == 0 ? SupportFAB.FAB_POSITION.BOTTOM_LEFT : BOTTOM_RIGHT)
+                .setFabIconPosition(fabPOs == 0 ? BOTTOM_LEFT : BOTTOM_RIGHT)
                 .setFabElevation(etFABele.getText().toString().trim().isEmpty() ? 0 : Integer.parseInt(etFABele.getText().toString()))
                 .setFABAnimation(swAnim.isChecked()).build();
 
