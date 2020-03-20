@@ -64,7 +64,7 @@ public class HelpActivity extends BaseActivity implements OnSessionEvents {
                             new Handler().postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Intent mStartActivity = new Intent(HelpActivity.this, HelpActivity.class);
+                                    Intent mStartActivity = new Intent(HelpActivity.this.getApplicationContext(), HelpActivity.class);
                                     int mPendingIntentId = 123456;
                                     PendingIntent mPendingIntent = PendingIntent.getActivity(HelpActivity.this, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
                                     AlarmManager mgr = (AlarmManager) HelpActivity.this.getSystemService(Context.ALARM_SERVICE);
@@ -94,20 +94,26 @@ public class HelpActivity extends BaseActivity implements OnSessionEvents {
      * Method to place a direct audio call by calling sdk function
      */
     public void placeAudioCall(View view) {
-        AcquireApp.getInstance().startSupportChat(HelpActivity.this, CallType.AUDIO);
+        if (AcquireApp.getInstance() != null)
+            AcquireApp.getInstance().startSupportChat(HelpActivity.this, CallType.AUDIO);
     }
 
     /**
      * Method to place a direct video call by calling sdk function
      */
     public void placeVideoCall(View view) {
-        AcquireApp.getInstance().startSupportChat(HelpActivity.this, CallType.VIDEO);
+        if (AcquireApp.getInstance() != null)
+            AcquireApp.getInstance().startSupportChat(HelpActivity.this, CallType.VIDEO);
     }
 
     /**
      * Method to logout by calling sdk function
      */
     public void doLogout(View view) {
+        if (txtSdkStatus.getText().toString().equals("Disconnected")) {
+
+            return;
+        }
         AcquireApp.logOut();
         txtSdkStatus.setText("Disconnected");
     }

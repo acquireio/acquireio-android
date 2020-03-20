@@ -102,7 +102,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void openAcquire(View view) {
-        String url = "https://app.acquire.io/signup";
+        String url = "https://app.acquire.io/signup/create-account";
         Intent i = new Intent(Intent.ACTION_VIEW);
         i.setData(Uri.parse(url));
         startActivity(i);
