@@ -16,6 +16,7 @@ public class CheckAccountIDTask extends AsyncTask<String, Void, Void> {
     private Activity mActivity;
     private SucessCallBack mCallBack;
     private String URL = "https://app.acquire.io/api/auth/account?id=";
+
     public CheckAccountIDTask(Activity activity, SucessCallBack sucessCallBack) {
         mActivity = activity;
         mCallBack = sucessCallBack;
@@ -34,8 +35,7 @@ public class CheckAccountIDTask extends AsyncTask<String, Void, Void> {
         try {
             url = new URL(URL + accId);
 
-            urlConnection = (HttpURLConnection) url
-                    .openConnection();
+            urlConnection = (HttpURLConnection) url.openConnection();
 
             InputStream in = urlConnection.getInputStream();
 

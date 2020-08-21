@@ -3,12 +3,13 @@ package com.acquire.sdk.app.fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.acquire.sdk.app.R;
 import com.acquireio.AcquireApp;
@@ -66,14 +67,11 @@ public class InfoFrag extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        if (mParam1.equalsIgnoreCase("Personal Info"))
-            return inflater.inflate(R.layout.frag_info, container, false);
-        else
-            return inflater.inflate(R.layout.frag_payment, container, false);
+        if (mParam1.equalsIgnoreCase("Personal Info")) return inflater.inflate(R.layout.frag_info, container, false);
+        else return inflater.inflate(R.layout.frag_payment, container, false);
     }
 
     @Override
@@ -103,8 +101,7 @@ public class InfoFrag extends Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            throw new RuntimeException(context.toString() + " must implement OnFragmentInteractionListener");
         }
     }
 

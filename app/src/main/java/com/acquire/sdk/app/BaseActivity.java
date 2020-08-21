@@ -1,16 +1,16 @@
-
 package com.acquire.sdk.app;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.acquire.sdk.app.util.SelectedTab;
 import com.acquireio.AcquireApp;
@@ -42,8 +42,7 @@ public abstract class BaseActivity extends AQR_BaseActivity {
 
     public void onClickEvent(View view) {
         SelectedTab tag = SelectedTab.valueOf(view.getTag().toString());
-        if (tag == selectedTab)
-            return;
+        if (tag == selectedTab) return;
         selectedTab = tag;
         switch (tag) {
             case HOME:

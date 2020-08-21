@@ -14,7 +14,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginLeft="5dp"
         android:background="@android:color/white"
-        app:tileSize="10"/>
+        app:tileSize="10" />
 
     <TextView
         android:id="@+id/flag_color_code"
@@ -28,5 +28,5 @@
         android:maxLines="1"
         android:ellipsize="end"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        tools:text="#ffffff"/>
+        tools:text="#ffffff" />
 </LinearLayout>

@@ -15,8 +15,9 @@ public class CustomFlag extends FlagView {
 
     /**
      * onBind Views
+     *
      * @param context context
-     * @param layout custom flagView's layout
+     * @param layout  custom flagView's layout
      */
     public CustomFlag(Context context, int layout) {
         super(context, layout);
@@ -26,6 +27,7 @@ public class CustomFlag extends FlagView {
 
     /**
      * invoked when selector moved
+     *
      * @param colorEnvelope provide color, hexCode, argb
      */
     @Override

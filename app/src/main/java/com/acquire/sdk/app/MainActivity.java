@@ -30,8 +30,7 @@ import java.util.ArrayList;
  *
  * @author Nilay Dani
  */
-public class MainActivity extends BaseActivity implements SeekBar.OnSeekBarChangeListener,
-        OnChartGestureListener, OnChartValueSelectedListener {
+public class MainActivity extends BaseActivity implements SeekBar.OnSeekBarChangeListener, OnChartGestureListener, OnChartValueSelectedListener {
 
     private LineChart chart;
     private SeekBar seekBarX, seekBarY;
@@ -103,11 +102,7 @@ public class MainActivity extends BaseActivity implements SeekBar.OnSeekBarChang
         selectedTab(SelectedTab.HOME);
     }
 
-    private final int[] colors = new int[]{
-            Color.parseColor("#58FFA5"),
-            Color.parseColor("#585AFF"),
-            Color.parseColor("#00E0FF")
-    };
+    private final int[] colors = new int[]{Color.parseColor("#58FFA5"), Color.parseColor("#585AFF"), Color.parseColor("#00E0FF")};
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -186,9 +181,7 @@ public class MainActivity extends BaseActivity implements SeekBar.OnSeekBarChang
 
     @Override
     public void onValueSelected(Entry e, Highlight h) {
-        Log.i("VAL SELECTED",
-                "Value: " + e.getY() + ", xIndex: " + e.getX()
-                        + ", DataSet index: " + h.getDataSetIndex());
+        Log.i("VAL SELECTED", "Value: " + e.getY() + ", xIndex: " + e.getX() + ", DataSet index: " + h.getDataSetIndex());
     }
 
     @Override

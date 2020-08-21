@@ -1,12 +1,13 @@
 package com.acquire.sdk.app;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.acquire.sdk.app.adapter.ViewPagerAdapter;
 import com.acquire.sdk.app.fragment.ChartFrag;
 import com.acquire.sdk.app.util.SelectedTab;
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * Details activity .

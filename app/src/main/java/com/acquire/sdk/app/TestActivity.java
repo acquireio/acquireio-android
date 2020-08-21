@@ -2,12 +2,13 @@ package com.acquire.sdk.app;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.acquire.sdk.app.adapter.ViewPagerAdapter;
 import com.acquire.sdk.app.fragment.InfoFrag;
 import com.acquire.sdk.app.util.SelectedTab;
+import com.google.android.material.tabs.TabLayout;
 
 public class TestActivity extends BaseActivity implements InfoFrag.OnFragmentInteractionListener {
     private static final String[] tabArray = {"Personal Info", "Payment Method"};
@@ -36,7 +37,7 @@ public class TestActivity extends BaseActivity implements InfoFrag.OnFragmentInt
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         for (String tab : tabArray)
-            adapter.addFrag(InfoFrag.newInstance(tab,""), tab);
+            adapter.addFrag(InfoFrag.newInstance(tab, ""), tab);
         viewPager.setAdapter(adapter);
     }
 

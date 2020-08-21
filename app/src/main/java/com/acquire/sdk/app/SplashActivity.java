@@ -9,12 +9,13 @@ import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.acquire.sdk.app.util.CheckAccountIDTask;
 import com.acquire.sdk.app.util.SucessCallBack;
@@ -46,34 +47,32 @@ public class SplashActivity extends AppCompatActivity {
         alertDialogBuilderUserInput.setView(mView);
 
         final EditText userInputDialogEditText = mView.findViewById(R.id.userInputDialog);
-        alertDialogBuilderUserInput.setCancelable(true)
-                .setPositiveButton("Change", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogBox, int id) {
-                        if (userInputDialogEditText.getText().toString().trim().isEmpty()) {
-                            Toast.makeText(SplashActivity.this, "Account id can't be blank", Toast.LENGTH_LONG).show();
+        alertDialogBuilderUserInput.setCancelable(true).setPositiveButton("Change", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogBox, int id) {
+                if (userInputDialogEditText.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(SplashActivity.this, "Account id can't be blank", Toast.LENGTH_LONG).show();
+                    showInputDialog();
+                    return;
+                }
+
+                new CheckAccountIDTask(SplashActivity.this, new SucessCallBack() {
+                    @Override
+                    public void sucess(boolean b) {
+                        if (b) {
+                            launchApplication(userInputDialogEditText.getText().toString().trim());
+                        } else {
                             showInputDialog();
-                            return;
                         }
-
-                        new CheckAccountIDTask(SplashActivity.this, new SucessCallBack() {
-                            @Override
-                            public void sucess(boolean b) {
-                                if (b) {
-                                    launchApplication(userInputDialogEditText.getText().toString().trim());
-                                } else {
-                                    showInputDialog();
-                                }
-                            }
-                        }).execute(userInputDialogEditText.getText().toString().trim());
-
                     }
-                })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogBox, int id) {
-                        dialogBox.cancel();
-                        finish();
-                    }
-                });
+                }).execute(userInputDialogEditText.getText().toString().trim());
+
+            }
+        }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogBox, int id) {
+                dialogBox.cancel();
+                finish();
+            }
+        });
 
         AlertDialog alertDialogAndroid = alertDialogBuilderUserInput.create();
         alertDialogAndroid.setCancelable(false);
@@ -93,7 +92,8 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Intent mStartActivity = new Intent(SplashActivity.this, SplashActivity.class);
                 int mPendingIntentId = 123456;
-                PendingIntent mPendingIntent = PendingIntent.getActivity(SplashActivity.this, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+                PendingIntent mPendingIntent =
+                        PendingIntent.getActivity(SplashActivity.this, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
                 AlarmManager mgr = (AlarmManager) SplashActivity.this.getSystemService(Context.ALARM_SERVICE);
                 mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 50, mPendingIntent);
                 System.exit(0);
