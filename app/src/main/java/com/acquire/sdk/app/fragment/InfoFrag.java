@@ -77,14 +77,20 @@ public class InfoFrag extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if (mParam1.equalsIgnoreCase("Personal Info")) {
-            AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText3));
-            AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText4));
-        } else {
-            AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText5));
-            AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText6));
-            AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText7));
-            AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText8));
+        try {
+            if (AcquireApp.getInstance() != null) {
+                if (mParam1.equalsIgnoreCase("Personal Info")) {
+                    AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText3));
+                    AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText4));
+                } else {
+                    AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText5));
+                    AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText6));
+                    AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText7));
+                    AcquireApp.getInstance().addMaskingView(view.findViewById(R.id.editText8));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
