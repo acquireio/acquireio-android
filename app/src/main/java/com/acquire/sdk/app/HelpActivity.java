@@ -23,7 +23,7 @@ import com.acquire.sdk.app.util.SelectedTab;
 import com.acquire.sdk.app.util.SucessCallBack;
 import com.acquireio.AcquireApp;
 import com.acquireio.callbacks.OnSessionEvents;
-import com.acquireio.sdk.enums.CallType;
+import com.acquireio.enums.CallType;
 
 import java.util.List;
 
@@ -98,14 +98,14 @@ public class HelpActivity extends BaseActivity implements OnSessionEvents {
      * Method to place a direct audio call by calling sdk function
      */
     public void placeAudioCall(View view) {
-        if (AcquireApp.getInstance() != null) AcquireApp.getInstance().startSupportChat(HelpActivity.this, CallType.AUDIO);
+        if (AcquireApp.INSTANCE != null) AcquireApp.INSTANCE.startDirectSupportChat(CallType.AUDIO);
     }
 
     /**
      * Method to place a direct video call by calling sdk function
      */
     public void placeVideoCall(View view) {
-        if (AcquireApp.getInstance() != null) AcquireApp.getInstance().startSupportChat(HelpActivity.this, CallType.VIDEO);
+        if (AcquireApp.INSTANCE != null) AcquireApp.INSTANCE.startDirectSupportChat(CallType.VIDEO);
     }
 
     /**
@@ -123,15 +123,15 @@ public class HelpActivity extends BaseActivity implements OnSessionEvents {
                 if (aBoolean) txtSdkStatus.setText("Disconnected");
             }
         });
-        AcquireApp.logOut(success);
+        AcquireApp.INSTANCE.logOut(success);
     }
 
     /**
      * Method to restart sdk using sdk init function
      */
     public void doRestart(View view) {
-        AcquireApp.init(this.getApplication(), AccID);
-        AcquireApp.getInstance().setSessionListner(this);
+        AcquireApp.INSTANCE.init(this.getApplication(), AccID);
+        AcquireApp.INSTANCE.setSessionListener(this);
     }
 
     @Override
@@ -172,17 +172,7 @@ public class HelpActivity extends BaseActivity implements OnSessionEvents {
     }
 
     @Override
-    public void onCallConnected(CallType callType) {
-
-    }
-
-    @Override
-    public void onCallDIsconnected(CallType callType) {
-
-    }
-
-    @Override
-    public void callDisconnectWithReason(String s) {
+    public void onCallConnected() {
 
     }
 
@@ -218,6 +208,11 @@ public class HelpActivity extends BaseActivity implements OnSessionEvents {
 
     @Override
     public void onWaitDialogDisappear() {
+
+    }
+
+    @Override
+    public void onCallDisconnected() {
 
     }
 }

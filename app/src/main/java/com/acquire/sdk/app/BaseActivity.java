@@ -11,17 +11,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.acquire.sdk.app.util.SelectedTab;
 import com.acquireio.AcquireApp;
-import com.acquireio.sdk.activities.AQR_BaseActivity;
 
 /**
  * Base class of all Activities of the Demo Application.
  *
  * @author Nilay Dani
  */
-public abstract class BaseActivity extends AQR_BaseActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     private SelectedTab selectedTab;
 
@@ -48,13 +48,7 @@ public abstract class BaseActivity extends AQR_BaseActivity {
             case HOME:
                 startActivity(new Intent(this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;
-            case TEST:
-                startActivity(new Intent(this, TestActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                break;
-            case SETTINGS:
-                startActivity(new Intent(this, SettingActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
-                break;
-            case HELP:
+               case HELP:
                 startActivity(new Intent(this, HelpActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 break;
         }
@@ -91,8 +85,8 @@ public abstract class BaseActivity extends AQR_BaseActivity {
     }
 
     public void startSDK(View view) {
-        if (AcquireApp.getInstance() != null) {
-            AcquireApp.getInstance().startSupportChat();
+        if (AcquireApp.INSTANCE != null) {
+            AcquireApp.INSTANCE.startSupportChat();
         }
     }
 }

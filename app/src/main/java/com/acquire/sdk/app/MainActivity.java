@@ -40,7 +40,6 @@ public class MainActivity extends BaseActivity implements SeekBar.OnSeekBarChang
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-//        chart.animateXY(500, 500);
     }
 
     private void initViews() {
@@ -60,8 +59,6 @@ public class MainActivity extends BaseActivity implements SeekBar.OnSeekBarChang
         chart.getAxisLeft().setEnabled(false);
         chart.getAxisRight().setDrawAxisLine(false);
         chart.getAxisRight().setDrawGridLines(false);
-//        chart.getXAxis().setDrawAxisLine(false);
-//        chart.getXAxis().setDrawGridLines(false);
 
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);

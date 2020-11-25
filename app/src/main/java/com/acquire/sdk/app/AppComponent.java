@@ -32,11 +32,10 @@ public class AppComponent extends Application {
         if (restoredText != null) {
             AccID = prefs.getString("acc_id", "");
         } else {
-            AccID = null; //TODO Set Default Acc Id here
+            AccID = "d5885"; //TODO Set Default Acc Id here
             editor.putString("acc_id", AccID);
             editor.apply();
         }
-        AcquireApp.init(this, AccID);
-        AcquireApp.setShowDefaultFAB(false);
+        AcquireApp.INSTANCE.init(this, AccID);
     }
 }

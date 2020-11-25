@@ -84,20 +84,19 @@
             android:layout_width="114dp"
             android:layout_height="84dp"
             android:onClick="openDetail"
-            android:tag="leads"
             android:scaleType="centerCrop"
-            android:src="@drawable/leads" />
+            android:src="@drawable/leads"
+            android:tag="leads" />
 
         <ImageView
             android:layout_width="114dp"
-            android:tag="revisitor"
             android:layout_height="84dp"
             android:onClick="openDetail"
             android:scaleType="centerCrop"
-            android:src="@drawable/visitor" />
+            android:src="@drawable/visitor"
+            android:tag="revisitor" />
 
     </LinearLayout>
-
 
     <include
         android:id="@+id/layBottom"
@@ -105,6 +104,5 @@
         android:layout_width="match_parent"
         android:layout_height="83dp"
         android:layout_alignParentBottom="true" />
-
 
 </RelativeLayout>
