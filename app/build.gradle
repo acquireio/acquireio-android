@@ -3,14 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    signingConfigs {
-        signConfig {
-            keyAlias 'acquire'
-            keyPassword 'password'
-            storeFile file('C:/Users/Nilay/AndroidStudioProjects/AcquireSDK/acquire_sdk_key.jks')
-            storePassword 'password'
-        }
-    }
     compileSdkVersion 29
     defaultConfig {
         applicationId "com.acquire.sdk.app"
@@ -22,7 +14,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.signConfig
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
