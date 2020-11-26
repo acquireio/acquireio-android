@@ -1,6 +1,6 @@
 # AcquireIO Android SDK
 
-[![N|Solid](https://github.com/acquireio/acquireio-android/blob/master/github_banner.png)](httpshttps://play.google.com/store/apps/details?id=com.acquire.sdk.app)
+[![N|Solid](https://github.com/acquireio/acquireio-android/blob/master/github_banner.png)](https://play.google.com/store/apps/details?id=com.acquire.sdk.app)
 
 ------------
 
