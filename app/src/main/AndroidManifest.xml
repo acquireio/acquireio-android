@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <meta-data android:name="io.sentry.dsn" android:value="https://9eeb88b8e4d1448db8de85a16ef4387f@o170358.ingest.sentry.io/1248245" />
         <activity
             android:name=".SplashActivity"
             android:launchMode="singleInstance"
