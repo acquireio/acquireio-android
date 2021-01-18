@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import com.acquireio.AcquireApp;
 
 import io.sentry.Sentry;
-import io.sentry.android.AndroidSentryClientFactory;
+import io.sentry.android.core.SentryAndroid;
 
 /**
  * Application class for our demo app.
@@ -22,8 +22,10 @@ public class AppComponent extends Application {
         super.onCreate();
 
         // Use the Sentry DSN (client key) from the Project Settings page on Sentry
-        String sentryDsn = "https://9eeb88b8e4d1448db8de85a16ef4387f@sentry.io/1248245";
-        Sentry.init(sentryDsn, new AndroidSentryClientFactory(this));
+//        String sentryDsn = "https://9eeb88b8e4d1448db8de85a16ef4387f@sentry.io/1248245";
+        SentryAndroid.init(this, options -> {
+            options.setDsn("https://9eeb88b8e4d1448db8de85a16ef4387f@o170358.ingest.sentry.io/1248245");
+        });
 
         SharedPreferences prefs = getSharedPreferences("Acquire_sdk", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
